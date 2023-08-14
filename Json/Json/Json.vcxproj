@@ -139,7 +139,7 @@
     <ClInclude Include="Types\Array.h" />
     <ClInclude Include="Types\String.h" />
     <ClInclude Include="Types\Null.h" />
-    <ClInclude Include="Types\Bollean.h" />
+    <ClInclude Include="Types\Boolean.h" />
     <ClInclude Include="Types\Int.h" />
     <ClInclude Include="Tools\BaseType.h" />
     <ClInclude Include="Tools\JsonTypes.h" />
@@ -152,7 +152,7 @@
     <ClCompile Include="Types\Array.cpp" />
     <ClCompile Include="Types\String.cpp" />
     <ClCompile Include="Types\Null.cpp" />
-    <ClCompile Include="Types\Bollean.cpp" />
+    <ClCompile Include="Types\Boolean.cpp" />
     <ClCompile Include="Types\Int.cpp" />
     <ClCompile Include="Tools\BaseType.cpp" />
   </ItemGroup>

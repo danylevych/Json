@@ -20,4 +20,4 @@
 #include "Array.h"
 #include "String.h"
 #include "Object.h"
-#include "Bollean.h"
+#include "Boolean.h"

@@ -24,7 +24,7 @@
     <ClInclude Include="Types\Int.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Types\Bollean.h">
+    <ClInclude Include="Types\Boolean.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Types\Null.h">
@@ -59,7 +59,7 @@
     <ClCompile Include="Types\Int.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Types\Bollean.cpp">
+    <ClCompile Include="Types\Boolean.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Types\Null.cpp">
