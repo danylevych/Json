@@ -1,7 +1,7 @@
 # **GUIDE**
-- How to include?
-  - As other project
-  - As static lib
+- [How to include?](https://github.com/danylevych/Json/edit/master/README.md#how-to-include)
+  - [As other project](https://github.com/danylevych/Json#as-other-project)
+  - [As static lib](https://github.com/danylevych/Json#as-static-lib)
 
 # **How to include?**
 Firstly, you need to download files from this repository.
@@ -40,19 +40,27 @@ git clone https://github.com/danylevych/Json.git
 ## **As static lib**
 
 - First, that you need it is copy "include" and "lib" folders in directory where your project is.<br>
-![](/assets/addJsonToVS4.png)
+![](/assets/addJsonToVS4.png)<br><br>
 
 - Open Visual Studio. Go to "Properties", than "C/C++ -> Genaral -> Additional Include Directories", and add the path to "include" folder for the option.<br>
 ![](/assets/addJsonToVS5.png)<br><br>
 
-- Next step - in Properties go to Linker -> General -> Additional Library Directories. Here you need to add the path to "lib" folder.<br>
-> **Warning**
-> Remember, that the "lib" folder consist of two folders, it's "Debug" and "Release", choose one that you need. I know that is no comfortable to always swich the folder, but I have not any idea how to do it in one .lib. So, I'm sorry.
-![](/assets/addJsonToVS6.png)
+- Next step - in "Properties" go to "Linker -> General -> Additional Library Directories". Here you need to add the path to "lib" folder.<br>
+
+  > **Warning**
+  > Remember, that the "lib" folder consist of two folders, it's "Debug" and "Release", choose one that you need. I know that is no comfortable to always swich the folder, but I have not any idea how to do it in one .lib. So, I'm sorry.
+
+<br>
+
+![](/assets/addJsonToVS6.png)<br><br>
 
 - And last that you need is in "Linker" part go to "Input -> Additional Dependencies", and add the "Json.lib" at the option.<br>
-> **Note**
-> For Debug and Release configuration the library has the same name.
+
+  > **Note**
+  > For Debug and Release configuration the library has the same name.
+
+<br>
+
 ![](/assets/addJsonToVS7.png)
 
 ## **The next is How to work, so...**
