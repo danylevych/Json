@@ -6,8 +6,8 @@
     - [Int](https://github.com/danylevych/Json#int)
     - [Float](https://github.com/danylevych/Json#float)
     - [Null](https://github.com/danylevych/Json#null)
-    - [Boolean]()
-    - [String]()
+    - [Boolean](https://github.com/danylevych/Json#boolean)
+    - [String](https://github.com/danylevych/Json#string)
     - [Array]()
     - [Object]()
 
@@ -268,3 +268,5 @@
 
   <br>As the `Core::Types::Null` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
   <br>
+
+  ## **String**
