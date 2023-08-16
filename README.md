@@ -3,9 +3,9 @@
     - [As other project](https://github.com/danylevych/Json#as-other-project)
     - [As static lib](https://github.com/danylevych/Json#as-static-lib)
   - [Data types](https://github.com/danylevych/Json#data-types)
-    - [Int](https://github.com/danylevych/Json#Int)
-    - [Float](https://github.com/danylevych/Json#Float)
-    - [Null](https://github.com/danylevych/Json#Null)
+    - [Int](https://github.com/danylevych/Json#int)
+    - [Float](https://github.com/danylevych/Json#float)
+    - [Null](https://github.com/danylevych/Json#null)
     - [Boolean]()
     - [String]()
     - [Array]()
@@ -229,7 +229,7 @@
   | ------------- | ----------- |
   | `Null()` | Default cunstructer, that initialize `variavle` defult value - `nullptr`. |
   |||
-  | `operator std::string&() const` | Type cast operator, that returns the instance std::ctring, which look like `"null"`. |
+  | `operator std::string&() const` | Type cast operator, that returns the instance of `std::string`, which look like `"null"`. |
   | `operator bool() const` | Type cast operator, that always returns `false`. |
   |||
   | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. (You can say, that is unuseless, but we will have seen it late :D) |
@@ -237,6 +237,34 @@
   | `const std::nullptr_t& Value() const` | Returns the const reference to value which is inside in class. |
   |||
   | `std::ostream& operator<<(std::ostream& out, const Null& null);` | The overloaded out operator. |
-  
-  <br>As the `Core::Types::Float` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
+
+  <br>As the `Core::Types::Null` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
+  <br>
+
+  ## **Boolean**
+  The `Core::Types::Boolean` represented `bool` type.
+
+  ### Mhetods
+  | Mhetod's name | Description |
+  | ------------- | ----------- |
+  | `Boolean()` | Default cunstructer, that initialize `variavle` defult value - `false`. |
+  | `Boolean(bool value)` | Constructer, that takes one parameters `value`, that will be storing. |
+  | `Boolean(const Boolean& ohter)` | Copy constructer. |
+  | `Boolean(Boolean&& ohter) noexcept` | Move constructer. |
+  | `Boolean& operator=(const Boolean& other)` | Assignment copy operator. |
+  | `Boolean& operator=(Boolean&& other) noexcept` | Assigment move opertor. |
+  |||
+  | `operator bool&()` | Type cast operator to `bool` reference. |
+  | `operator const bool&() const` | Type cast operator to `bool` const reference. |
+  | `operator bool() const` | Type cast operator, that return current state of `value`, it's can be `true` or `false`. |
+  | `operator std::string() const` | Type cast operator, which return `std::string` instance, that look like `"true"` or `"false"` - it's depending of state `value` inside the current instance. |
+  |||
+  | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. (You can say, that is unuseless, but we will have seen it late :D) |
+  |||
+  | `bool& Value()` | Returns the reference to value which is inside in class. |
+  | `const bool& Value() const` | Returns the const reference to value which is inside in class. |
+  |||
+  | `std::ostream& operator<<(std::ostream& out, const Boolean& boolean);` | The overloaded out operator. |
+
+  <br>As the `Core::Types::Null` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
   <br>
