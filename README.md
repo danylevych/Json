@@ -180,14 +180,14 @@
   | `Int(Int&& ohter) noexcept` | Move constructer. |
   | `Int& operator=(const Int& other)` | Assignment copy operator. |
   | `Int& operator=(Int&& other) noexcept` | Assigment move opertor. |
-  |||
+  |<br>|<br>|
   | `operator int&()` | Type cast operator, that returns the reference to the storing value. |
   | `operator const int&() const` | Type cast operator, that returns the const reference to the storing value. |
   | `operator int() const`| Type cast operator to `int` type |
   | `operator Int() const`| Type cast operator to `Core::Types::Int` type. |
-  |||
+  |<br>|<br>|
   | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. (You can say, that is unuseless, but we will have seen it late :D) |
-  |||
+  |<br>|<br>|
   | `int& Value()` | Returns the reference to value which is inside in class. |
   | `const int& Value() const` | Returns the const reference to value which is inside in class. |
 
@@ -207,14 +207,14 @@
   | `Float(Float&& ohter) noexcept` | Move constructer. |
   | `Float& operator=(const Float& other)` | Assignment copy operator. |
   | `Float& operator=(Float&& other) noexcept` | Assigment move opertor. |
-  |||
+  |<br>|<br>|
   | `operator double&()` | Type cast operator, that returns the reference to the storing value. |
   | `operator const double&() const` | Type cast operator, that returns the const reference to the storing value. |
   | `operator double() const`| Type cast operator to `double` type |
   | `operator Float() const`| Type cast operator to `Core::Types::Float` type. |
-  |||
+  |<br>|<br>|
   | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. (You can say, that is unuseless, but we will have seen it late :D) |
-  |||
+  |<br>|<br>|
   | `double& Value()` | Returns the reference to value which is inside in class. |
   | `const double& Value() const` | Returns the const reference to value which is inside in class. |
 
@@ -228,14 +228,14 @@
   | Mhetod's name | Description |
   | ------------- | ----------- |
   | `Null()` | Default cunstructer, that initialize `variavle` defult value - `nullptr`. |
-  |||
+  |<br>|<br>|
   | `operator std::string&() const` | Type cast operator, that returns the instance of `std::string`, which look like `"null"`. |
   | `operator bool() const` | Type cast operator, that always returns `false`. |
-  |||
+  |<br>|<br>|
   | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. (You can say, that is unuseless, but we will have seen it late :D) |
-  |||
+  |<br>|<br>|
   | `const std::nullptr_t& Value() const` | Returns the const reference to value which is inside in class. |
-  |||
+  |<br>|<br>|
   | `std::ostream& operator<<(std::ostream& out, const Null& null);` | The overloaded out operator. |
 
   <br>As the `Core::Types::Null` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
@@ -253,17 +253,17 @@
   | `Boolean(Boolean&& ohter) noexcept` | Move constructer. |
   | `Boolean& operator=(const Boolean& other)` | Assignment copy operator. |
   | `Boolean& operator=(Boolean&& other) noexcept` | Assigment move opertor. |
-  |||
+  |<br>|<br>|
   | `operator bool&()` | Type cast operator to `bool` reference. |
   | `operator const bool&() const` | Type cast operator to `bool` const reference. |
   | `operator bool() const` | Type cast operator, that return current state of `value`, it's can be `true` or `false`. |
   | `operator std::string() const` | Type cast operator, which return `std::string` instance, that look like `"true"` or `"false"` - it's depending of state `value` inside the current instance. |
-  |||
+  |<br>|<br>|
   | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. (You can say, that is unuseless, but we will have seen it late :D) |
-  |||
+  |<br>|<br>|
   | `bool& Value()` | Returns the reference to value which is inside in class. |
   | `const bool& Value() const` | Returns the const reference to value which is inside in class. |
-  |||
+  |<br>|<br>|
   | `std::ostream& operator<<(std::ostream& out, const Boolean& boolean);` | The overloaded out operator. |
 
   <br>As the `Core::Types::Null` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
