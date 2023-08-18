@@ -182,7 +182,7 @@
   | `Int(int value)` | Constructer, that takes one parameters `value`, that will be storing. |
   | `Int(const Int& ohter)` | Copy constructer. |
   | `Int(Int&& ohter) noexcept` | Move constructer. |
-  | `Int& operator=(const Int& other)` | Assignment copy operator. |
+  | `Int& operator=(const Int& other)` | Assigment copy operator. |
   | `Int& operator=(Int&& other) noexcept` | Assigment move opertor. |
   |<br>|<br>|
   | `operator int&()` | Type cast operator, that returns the reference to the storing value. |
@@ -211,7 +211,7 @@
   | `Float(double value)` | Constructer, that takes one parameters `value`, that will be storing. |
   | `Float(const Float& ohter)` | Copy constructer. |
   | `Float(Float&& ohter) noexcept` | Move constructer. |
-  | `Float& operator=(const Float& other)` | Assignment copy operator. |
+  | `Float& operator=(const Float& other)` | Assigment copy operator. |
   | `Float& operator=(Float&& other) noexcept` | Assigment move opertor. |
   |<br>|<br>|
   | `operator double&()` | Type cast operator, that returns the reference to the storing value. |
@@ -260,7 +260,7 @@
   | `Boolean(bool value)` | Constructer, that takes one parameters `value`, that will be storing. |
   | `Boolean(const Boolean& ohter)` | Copy constructer. |
   | `Boolean(Boolean&& ohter) noexcept` | Move constructer. |
-  | `Boolean& operator=(const Boolean& other)` | Assignment copy operator. |
+  | `Boolean& operator=(const Boolean& other)` | Assigment copy operator. |
   | `Boolean& operator=(Boolean&& other) noexcept` | Assigment move opertor. |
   |<br>|<br>|
   | `operator bool&()` | Type cast operator to `bool` reference. |
@@ -296,7 +296,7 @@
   | `String(const std::wstring& value)` | Constructer, that gers l-value instance of `std::wstring`. |
   | `String(const String& other)`| Copy constructer. |
   | `String(String&& other)`| Move constructer. |
-  | `String& operator=(const String& other)` | Assignment copy operator. |
+  | `String& operator=(const String& other)` | Assigment copy operator. |
   | `String& operator=(String&& other) noexcept` | Assigment move opertor. |
   |<br>|<br>|
   | `operator std::string() const` | Overloaded type cast operator to `std::string`. |
@@ -343,14 +343,32 @@
   | `Array()` | Default constructer. |
   | `Array(const std::initializer_list<BaseTypePtrT>& list)` | Constructer, that gets a list of raw pointers as parameters ([Example]()), i guss that it will be the most usefull, and common method. |
   | `Array(Array&& other) noexcept` | Move constructer. |
+  | `Array& operator=(Array&& other) noexcept` | Assigment move operator. |
+  | `Array& operator=(const std::initializer_list<BaseTypePtrT>& list)` | Assigment operator, that gets a list of raw pointers. |
   
   >[!IMPORTANT]
-  > The `Core::Types::Array` doesn't have a copy constucter, oh no, this type of cunstructer deleted, such as we are working with the pointers. 
+  > The `Core::Types::Array` doesn't have a copy constructer and copy assigment operator, oh no, these methods have been removed, just as we are working with the pointers. 
   >
   > Yep, you can ask, "we can copy values of each element not an address, so why do not you do it?". 
   >
-  > Simply, I am not to do it because I like procrastination. Don't worry, maybe I do it as fast as I can.
+  > Simply, I did not to do it because I like procrastination. Don't worry, maybe I do it as fast as I can.
   
   | Mhetod's name | Description |
   | ------------- | ----------- |
-  | | |
+  | `std::vector<BaseSmartPtrT>& Value()` | This method returns the reference to inner array. |
+  | `const std::vector<BaseSmartPtrT>& Value() const` | This method returns the `const` reference to inner array. |
+  | `operator std::string() const` | Type cast operator, which returns the array as `std::string`.  |
+  |<br>|<br>|
+  | `ReturnedDataJson operator[](size_t index)` | Overloaded index operator, its returns `ReturnedDataJson` type, we are seeing it later (you can wath some info about this class here [<u>`ReturnedDataJson`</u>]()). |
+  | `const ReturnedDataJson operator[](size_t index) const` | Overloaded index operator, its returns `ReturnedDataJson` type, we are seeing it later (you can wath some info about this class here [<u>`ReturnedDataJson`</u>]()). | 
+  |<br>|<br>|
+  | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. |
+  |<br>|<br>|
+  | `void PushBack(BaseTypePtrT ptr)` | This method provide to us ability to insert value (<u>**raw pointer**</u> that has alocated on the heap(dymamic memory)) into `Core::Types::Array`, to back of course. |
+  | `void PushBack(BaseSmartPtrT&& ptr)` | This method provide to us ability to insert value (<u>**smart pointer**</u> that has alocated on the heap(dymamic memory)) into `Core::Types::Array`, to back of course. |
+  | Add the method for receving l-value BaseSmartPtrT | |
+  | `size_t Size() const` | Returns size of array. |
+  | `void Clear()` | Deletes all elements in array. |
+  | `bool Empty() const` | Checks if array is empty, and if it realy empty it returns `true`, oposite - `false` |
+  | `const std::vector<BaseSmartPtrT>& Data() const` | Returns the inner array, most correct `const` reference to its. |
+  
