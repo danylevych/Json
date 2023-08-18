@@ -347,7 +347,7 @@
   | `Array& operator=(const std::initializer_list<BaseTypePtrT>& list)` | Assigment operator, that gets a list of raw pointers. |
   
   >[!IMPORTANT]
-  > The `Core::Types::Array` doesn't have a copy constructer and copy assigment operator, oh no, these methods have been removed, just as we are working with the pointers. 
+  > The `Core::Types::Array` doesn't have a copy constructer and copy assigment operator, oh no, these methods have been removed, because we are working with the pointers. 
   >
   > Yep, you can ask, "we can copy values of each element not an address, so why do not you do it?". 
   >
@@ -371,3 +371,11 @@
   | `void Clear()` | Deletes all elements in array. |
   | `bool Empty() const` | Checks if array is empty, and if it realy empty it returns `true`, oposite - `false` |
   | `const std::vector<BaseSmartPtrT>& Data() const` | Returns the inner array, most correct `const` reference to its. |
+  | `ReturnedDataJson Front()` | Returns the object of `ReturnedDataJson` (now think about `ReturnedDataJson` as reference to some element) to first element in `Core::Types::Array`. |
+  | `const ReturnedDataJson Front() const` | Returns the object of `const ReturnedDataJson` (now think about `ReturnedDataJson` as reference to some element) to last element in `Core::Types::Array`. |
+  | `ReturnedDataJson Back()` | Returns the object of `ReturnedDataJson` (now think about `ReturnedDataJson` as reference to some element) to first element in `Core::Types::Array`. |
+  | `const ReturnedDataJson Back() const` | Returns the object of `const ReturnedDataJson` (now think about `ReturnedDataJson` as reference to some element) to last element in `Core::Types::Array`. |
+  | `void PopBack()` | Deletes last element in `Core::Types::Array`. |
+  | `void Swap(Array& other)` | Swaps two instances of `Core::Types::Array`. |
+  | `iterator Insert(const_iterator where, BaseSmartPtrT&& val)` | Inserts value into array for hint, and returns the `iterator` of this value in array. |
+  | `template <typename ...Arg> iterator Emplace(const_iterator where, Arg&&... arg)` | Inserts value into array for hint, and returns the `iterator` of this value in array. Difference between this method and previous one is that this builds the value at the time of inserting, but `Insert` gets the value that has been built previosly. |
