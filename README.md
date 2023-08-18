@@ -108,6 +108,7 @@
 
   The `Core::Types::BaseType` is a parent class. For it we can do somenthing like dynamic typization(if we can named it like that) for our project.
   It has some virtual methods, such as `GetType()` and `Destructor`. It also has a protected field - `type`, which store the type of the current instance. In the below section you can see how `Core::Types::BaseType` look like.
+
    ```cpp
 	namespace Core
 	{
@@ -143,6 +144,7 @@
 		}
 	}
    ```
+
   <br>`Core::Types::BaseType` also has the template method `Get<T>()`, that can parse instance to data type that you send its. It use for the down casting, and it will be show later.
   
   <br>Now is the time to talk about `type` field. As you can see, this field has a `Core::JsonTypes`. This is enumeration, which store names of all those types, that we were talking before.
@@ -169,9 +171,11 @@
   <br>Also we are going to talk about check's type methods. It is the `Core::Types::BaseType::IsSomeType()`, this mhetod return true if current instance has the same `type` like one that is in `SomeType` (for example: if we call the `Core::Types::BaseType::IsInt()`, it will return `true` if current instance store the `Core::Types::Int`, and `false` in oposite situation).
 
   ## **Int**
+
   The json's `int` or `number`, call it as you want, has represented as `Core::Types::Int` class. That is a wrapper for `int` type. So, you can yse it as default `int` variable.
   
   ### Mhetods
+
   | Mhetod's name | Description |
   | ------------- | ----------- |
   | `Int()` | Default cunstructer, that initialize `variavle` defult value - `0`. |
@@ -196,9 +200,11 @@
   <br>
 
   ## **Float**
+
   The `Core::Types::Float` is a class, that can store a fractional number. It's only a wrapper under `double` type.
 
   ### Mhetods
+
   | Mhetod's name | Description |
   | ------------- | ----------- |
   | `Float()` | Default cunstructer, that initialize `variavle` defult value - `0.0`. |
@@ -222,9 +228,11 @@
   <br>
 
   ## **Null**
+
   Json's files have the `null` type, so, the `Core::Types::Null` represent it in my class.
 
   ### Mhetods
+
   | Mhetod's name | Description |
   | ------------- | ----------- |
   | `Null()` | Default cunstructer, that initialize `variavle` defult value - `nullptr`. |
@@ -236,7 +244,7 @@
   |<br>|<br>|
   | `const std::nullptr_t& Value() const` | Returns the const reference to value which is inside in class. |
   |<br>|<br>|
-  | `std::ostream& operator<<(std::ostream& out, const Null& null);` | The overloaded out operator. |
+  | `std::ostream& operator<<(std::ostream& out, const Null& null)` | The overloaded out operator. |
 
   <br>As the `Core::Types::Null` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
   <br>
@@ -245,6 +253,7 @@
   The `Core::Types::Boolean` represented `bool` type.
 
   ### Mhetods
+
   | Mhetod's name | Description |
   | ------------- | ----------- |
   | `Boolean()` | Default cunstructer, that initialize `variavle` defult value - `false`. |
@@ -264,9 +273,47 @@
   | `bool& Value()` | Returns the reference to value which is inside in class. |
   | `const bool& Value() const` | Returns the const reference to value which is inside in class. |
   |<br>|<br>|
-  | `std::ostream& operator<<(std::ostream& out, const Boolean& boolean);` | The overloaded out operator. |
+  | `std::ostream& operator<<(std::ostream& out, const Boolean& boolean)` | The overloaded out operator. |
 
   <br>As the `Core::Types::Null` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
   <br>
 
   ## **String**
+
+  So, now we are going to talk about `Core::Types::String`. This class is reptresenting json's `string`. The `Core::Types::String` is a wrapper under the `std::wstring`. 
+  *Why is `std::wstring`, and not `std::string`?* 
+  Because, the json can works with `utf 8` format of coding, so, I think, thet it was optimal to use `std::wstring`.
+
+  ### Mhetods
+
+  | Mhetod's name | Description |
+  | ------------- | ----------- |
+  | `String()` | Default cunstructer, that initialize `variavle` defult value - `false`. |
+  | `String(const char* value)` | Constructer, that gets `const char*` values. |
+  | `String(std::string&& value)` | Constructer, that gets r-value instances of `std::string`. |
+  | `String(const std::string& value)` | Constructer, that gers l-value instance of `std::string`. |
+  | `String(std::wstring&& value)` | Constructer, that gets r-value instances of `std::wstring`. |
+  | `String(const std::wstring& value)` | Constructer, that gers l-value instance of `std::wstring`. |
+  | `String(const String& other)`| Copy constructer. |
+  | `String(String&& other)`| Move constructer. |
+  | `String& operator=(const String& other)` | Assignment copy operator. |
+  | `String& operator=(String&& other) noexcept` | Assigment move opertor. |
+  |<br>|<br>|
+  | `operator std::string() const` | Overloaded type cast operator to `std::string`. |
+  | `operator std::wstring&()` | Overloaded type cast operator, which returns the reference to the value, that stored in the current instance of `Core::Types::String`. |
+  | `operator const std::wstring&() const` | Overloaded type cast operator, which returns the const reference to the value, that stored in the current instance of `Core::Types::String`. |
+  |<br>|<br>|
+  | `virtual JsonTypes GetType() const` | Overloaded `Core::Types::BaseType`'s method, that returns a type of this class. (You can say, that is unuseless, but we will have seen it late :D) |
+  |<br>|<br>|
+  | `std::wstring& Value()` | Returns the reference to value which is inside in class. |
+  | `const std::wstring& Value() const` | Returns the const reference to value which is inside in class. |
+  |<br>|<br>|
+  | `bool operator<(const String& other) const` | Overloaded less operator. |
+  | `bool operator>(const String& other) const` | Overloaded greater operator. |
+  | `bool operator!=(const String& other) const` | Overloaded equal operator. |
+  | `bool operator==(const String& other) const` | Overloaded not equal operator. |
+  |<br>|<br>|
+  | `std::ostream& operator<<(std::ostream& out, const String& string);` | The overloaded out operator. Its returs the `std::ostream&` that has a string like in json - `"some text"`. |
+
+  <br>As the `Core::Types::String` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
+  <br>
