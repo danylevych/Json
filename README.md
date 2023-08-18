@@ -377,5 +377,5 @@
   | `const ReturnedDataJson Back() const` | Returns the object of `const ReturnedDataJson` (now think about `ReturnedDataJson` as reference to some element) to last element in `Core::Types::Array`. |
   | `void PopBack()` | Deletes last element in `Core::Types::Array`. |
   | `void Swap(Array& other)` | Swaps two instances of `Core::Types::Array`. |
-  | `iterator Insert(const_iterator where, BaseSmartPtrT&& val)` | Inserts value into array for hint, and returns the `iterator` of this value in array. |
-  | `template <typename ...Arg> iterator Emplace(const_iterator where, Arg&&... arg)` | Inserts value into array for hint, and returns the `iterator` of this value in array. Difference between this method and previous one is that this builds the value at the time of inserting, but `Insert` gets the value that has been built previosly. |
+  | `iterator Insert(const_iterator where, BaseSmartPtrT&& val)` | Inserts value into array by hint, and returns the `iterator` of this value in array. |
+  | `template <typename ...Arg> iterator Emplace(const_iterator where, Arg&&... arg)` | Inserts value into array by hint, and returns the `iterator` of this value in array. Difference between this method and previous one is that this builds the value at the time of inserting, and `Insert` gets the value that has been built previosly. |
