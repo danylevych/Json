@@ -313,7 +313,44 @@
   | `bool operator!=(const String& other) const` | Overloaded equal operator. |
   | `bool operator==(const String& other) const` | Overloaded not equal operator. |
   |<br>|<br>|
-  | `std::ostream& operator<<(std::ostream& out, const String& string);` | The overloaded out operator. Its returs the `std::ostream&` that has a string like in json - `"some text"`. |
+  | `std::ostream& operator<<(std::ostream& out, const String& string)` | The overloaded out operator. Its returs the `std::ostream&` that has a string like in json - `"some text"`. |
 
   <br>As the `Core::Types::String` is a doughter calss from the `Core::Types::BaseTypes`, it has all methods, that `Core::Types::BaseTypes` has.
   <br>
+
+  ## **Array**
+
+  Now, we will talking, about something interesting, this is a `Core::Types::Array`.
+  
+  `Core::Types::Array` is a class that, can store a set of each types, that is here. And if i say 'all' it's mean all, including itself, and `Core::Types::Object`(this is the next, and finaly data type that we need to talk, but it will be later).
+
+  As I said it can store all data types, and it can do this because of it is a wrapper under `std::vector<std::unique_ptr<Core::Types::BaseType>>`. It saves the poiters into all values, so we can do down cast ad get the type, which we need.
+
+  First that I need to explain is all aliases.
+  - `BaseTypePtrT` - is the aliase of `Core::Types::BaseType*`
+  - `BaseSmartPtrT` - is the aliase of `std::unique_ptr<Core::Types::BaseType>`
+
+  Simply?
+
+  I can talk to you a lot of story of this class, but let's go to view methods that are in its, and after this I will show some exanples.
+
+  Sooooooo, let's go.
+
+  ### Mhetods
+  
+  | Mhetod's name | Description |
+  | ------------- | ----------- |
+  | `Array()` | Default constructer. |
+  | `Array(const std::initializer_list<BaseTypePtrT>& list)` | Constructer, that gets a list of raw pointers as parameters ([Example]()), i guss that it will be the most usefull, and common method. |
+  | `Array(Array&& other) noexcept` | Move constructer. |
+  
+  >[!IMPORTANT]
+  > The `Core::Types::Array` doesn't have a copy constucter, oh no, this type of cunstructer deleted, such as we are working with the pointers. 
+  >
+  > Yep, you can ask, "we can copy values of each element not an address, so why do not you do it?". 
+  >
+  > Simply, I am not to do it because I like procrastination. Don't worry, maybe I do it as fast as I can.
+  
+  | Mhetod's name | Description |
+  | ------------- | ----------- |
+  | | |
