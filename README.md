@@ -371,4 +371,3 @@
   | `void Clear()` | Deletes all elements in array. |
   | `bool Empty() const` | Checks if array is empty, and if it realy empty it returns `true`, oposite - `false` |
   | `const std::vector<BaseSmartPtrT>& Data() const` | Returns the inner array, most correct `const` reference to its. |
-  
