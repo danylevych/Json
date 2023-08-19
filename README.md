@@ -386,8 +386,8 @@
   The `Core::Types::Array` has methods, which return or get the iterator's data type - `iterator`, `const_iterator`, `reverce_iterator` or `const_reverse_itertor`. So, we are going to talk for these iterator's classes.
   
   >[!NOTE]
-  >If you have or had same expirience of working with the iterators in STL, it is he same, so it's must be easy to understending.
-  > But if you haven't expirience in this field don't worry, I try to explane what are the iterators, and how we can it `eat`.
+  >If you have or had same experience of working with the iterators in STL, it is he same, so it's must be easy to understending.
+  > But if you haven't experience in this field don't worry, I try to explane what are the iterators, and how we can it `eat`.
 
   <br> 
   
@@ -395,7 +395,3 @@
   Iterator - is the object that provide to us ability of bypass each element in colection.
   
   So, now we have known definition of iterator notion. But for you, as i thing this is not enough, because defenitions of all notion is so boring. Therefore we are going to study its in some examples
-
-  Each of these classes is a doughter class for `base_iterator`. 
-
-  | `iterator begin()` |  |
