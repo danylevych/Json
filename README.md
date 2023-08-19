@@ -386,8 +386,8 @@
   The `Core::Types::Array` has methods, which return or get the iterator's data type - `iterator`, `const_iterator`, `reverce_iterator` or `const_reverse_itertor`. So, we are going to talk for these iterator's classes.
   
   >[!NOTE]
-  >If you have or had same experience of working with the iterators in STL, it is he same, so it's must be easy to understending.
-  > But if you haven't experience in this field don't worry, I try to explane what are the iterators, and how we can it `eat`.
+  >If you have or had some experience of working with the iterators in STL, it is the same, so it's must be easy to understand.
+  > But if you haven't experience in this field don't worry, I will try to explane what are the iterators, and how we can it `eat`.
 
   <br> 
   
