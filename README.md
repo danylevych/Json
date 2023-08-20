@@ -387,11 +387,14 @@
   
   >[!NOTE]
   >If you have or had some experience of working with the iterators in STL, it is the same, so it's must be easy to understand.
-  > But if you haven't experience in this field don't worry, I will try to explane what are the iterators, and how we can it `eat`.
+  >
+  > But if you haven't experience in this field don't worry, I will try to explane what are the iterators, and how we can it 'eat'.
 
   <br> 
   
   ##### **First step into iterators**
   Iterator - is the object that provide to us ability of bypass each element in colection.
   
-  So, now we have known definition of iterator notion. But for you, as i thing this is not enough, because defenitions of all notion is so boring. Therefore we are going to study its in some examples
+  So, now we have known definition of iterator notion. But for you, as i thing this is not enough, because definitions of all notion is so boring. Therefore we are going to study its in some examples.
+
+  But first some pictures for deep understanding what is.
