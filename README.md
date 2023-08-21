@@ -384,10 +384,12 @@
 
   #### **Iterators**
   The `Core::Types::Array` has methods, which return or get the iterator's data type - `iterator`, `const_iterator`, `reverce_iterator` or `const_reverse_itertor`. So, we are going to talk for these iterator's classes.
-  
+
+  <br>
+
   >[!NOTE]
   >If you have or had some experience of working with the iterators in STL, it is the same, so it's must be easy to understand.
-  >
+  ><br>
   > But if you haven't experience in this field don't worry, I will try to explane what are the iterators, and how we can it 'eat'.
 
   <br> 
@@ -398,3 +400,76 @@
   So, now we have known definition of iterator notion. But for you, as i thing this is not enough, because definitions of all notion is so boring. Therefore we are going to study its in some examples.
 
   But first some pictures for deep understanding what is.
+  
+  So, image that we have an array(it can be some another data type like hash table, binary tree, bidirectional list, forward list ect.) like in the image below.<br>
+    ![](/assets/iteratorExamples/1.png)<br><br><br>
+  
+  **How we can walked for each element?**
+  
+  If you know operations that we can do with pointer, you probably said: "We can get all elements by adding to name of the array(Hint if you forget. Array's name is the pointer to first element of range.) some value.".
+
+  Yep, actually you can do it, but what will you do at the below situation.<br>
+    ![](/assets/iteratorExamples/2.png)<br><br><br>
+
+  Now, it will be difficult, because in this cause you need to create some method that gets index, which you need probably `GetElement()`, or, of course, you can do overloading this operator `[]`. But this apporch we will have slow speed of code execution. 
+
+  **Why?**
+  
+  Simply, image you wrote code like this:
+  ```cpp
+  // headers
+
+
+  class List
+  {
+  private:
+      struct Node
+      {
+          int data;
+          Node* next;
+      };
+
+  private:
+      Node* head;
+      size_t size;
+
+  public:
+      // ...
+      // some methods.
+      // ...
+
+      int GetElement(size_t index) 
+      {
+          if (index < 0 || index >= size)
+          {
+              throw std::out_of_range("index: " + std::to_string(index) + " is out of the range");
+          }
+          
+          Node* current = head;
+          for (size_t i = 0; i != index; i++)
+          {
+              current = head->next;
+          }
+
+          return current->data;
+      }
+  };
+
+
+  int main()
+  {
+      List list = { 3, 5, 10, 15, 45, 7, 8};
+
+      for (size_t i = 0; i < list.Size(); i++)
+      {
+          std::cout << list.GetElement(i) << std::endl;
+      }
+
+
+      return 0;
+  }
+  ```
+  
+  
+   go to element, that is in the head of list, in our cause it is `3`, than we
+
