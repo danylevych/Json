@@ -415,7 +415,7 @@
 
   **Why?**
   
-  Simply, image you wrote code like this:
+  Simply, image you wrote code like this for `List`:
   ```cpp
   // headers
 
@@ -470,6 +470,12 @@
   }
   ```
   
+  In this instance we have a loop in `main` that calls `GetElement()` in each iteration, and that method has anoother loop. In the GIF below you can see how it work.<br>
   
-   go to element, that is in the head of list, in our cause it is `3`, than we
+  ![](/assets/IteratorExamples/ListLoop.gif)<br><br>
 
+  So, we have a loop, that has a loop, and as you can geuss, speed of this pice of code will be **O(n<sup>2</sup>)**. This speed will be too slow for big data set. 
+
+  **How can we change speed of code execution?**
+
+  For this we can create iterators for our list. Image iterator as a pointer to some element in range. Each class, which is iterator, sould have overloaded `operator++` and `operator--`, those operators provide ability to bypass in the range by time **O(n)**.
